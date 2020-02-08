@@ -1,0 +1,43 @@
+/* body {
+    background-image: url('tombstone_1993_10_0.jpg');
+} */
+#top-bar {
+    display: flex;
+    border: 1px solid black;
+    height: 10vh;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 60vh;
+    width: 97vw;
+    border: 1px solid #707070;
+    margin: auto;
+    grid-gap: 80px;
+}
+#left-reel {
+    border: 1px solid black;
+}
+#middle-reel {
+    border: 1px solid black;
+}
+#right-reel {
+    border: 1px solid black;
+}
+#bottom-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    height: 20vh;
+}
+#spinBtn {
+    border-radius: 80%;
+    padding: 0 30px;
+    background-color: rgb(65, 157, 243);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}

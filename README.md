@@ -1,5 +1,6 @@
 # TombstoneSlotMachine
 
+``
 slot machine tombstone theme
 
 * render the 3 window blocks
@@ -27,4 +28,4 @@ make another array with all the values of images ex: [0,0,0,0,0,0,0,0,0,0,0,0,01
     - set payout values to each image, more value less chance of getting that image 
 
 * setTimeout will need callback to stop code from running while the reels spin on timeouts
-
+``
