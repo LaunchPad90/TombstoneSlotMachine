@@ -1,6 +1,6 @@
-/* body {
-    background-image: url('tombstone_1993_10_0.jpg');
-} */
+body {
+    
+}
 #top-bar {
     display: flex;
     border: 1px solid black;
@@ -11,17 +11,19 @@
 #container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 60vh;
-    width: 97vw;
+    height: 65vh;
+    width: 98vw;
     border: 1px solid #707070;
     margin: auto;
     grid-gap: 80px;
 }
 #left-reel {
     border: 1px solid black;
+    /* background-image: url('imgs/left-reel.jpg'); */
 }
 #middle-reel {
     border: 1px solid black;
+    /* background-image: url('imgs/tombstone_1993_10_0.jpg'); */
 }
 #right-reel {
     border: 1px solid black;
@@ -35,9 +37,14 @@
 }
 #spinBtn {
     border-radius: 80%;
-    padding: 0 30px;
+    padding: 0 80px;
     background-color: rgb(65, 157, 243);
     color: white;
     font-size: 30px;
+    text-align: center;
+}
+
+p {
+    font-size: 100px;
     text-align: center;
 }

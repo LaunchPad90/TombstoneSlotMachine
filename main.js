@@ -1,19 +1,25 @@
 /*----- constants -----*/
-const images = ['doc', 'doc', 'wyatt', 'doc', 'doc', 'doc', 'doc', 'doc', 'virgil', 'wyatt', 'wyatt', 'virgil'];
-let count = images.reduce((acc, image) => {
-    acc[image] = acc[image] ? acc[image] + 1 : 1;
-    return acc;
-}, {});
-console.log(count)
-//loop through images and assign numerical values to each object. store in imageValues
-const imagesValue = [];
+const images = [
+    { value: 0, name: 'wyatt', payOut: 1000 },
+    { value: 1, name: 'morgan', payOut: 2500 },
+    { value: 2, name: 'virgil', payOut: 3000 },
+    { value: 3, name: 'doc', payout: 5000 }
+];
 
 /*----- app's state (variables) -----*/
+let winner;
+
+let msg = document.createElement('h1');
+
+// if (leftReel.innerText === rightReel.innerText && leftReel === middleReel) 
 
 /*----- cached element references -----*/
 const spinBtn = document.getElementById('spinBtn');
+
 const leftReel = document.getElementById('left-reel');
+
 const middleReel = document.getElementById('middle-reel');
+
 const rightReel = document.getElementById('right-reel');
 
 
@@ -21,54 +27,64 @@ const rightReel = document.getElementById('right-reel');
 spinBtn.addEventListener('click', function (e) {
     // console.log(e.target);
     spin();
-    init();
     setTimeout(grabImg1, 1000);
     setTimeout(grabImg2, 2000);
     setTimeout(grabImg3, 3000);
 })
 /*----- functions -----*/
 function spin() {
-    for (let i = 0; i < images.length; i++)
-        // console.log(imagesValue)
-        return imagesValue.push(images);
+    let rndIdx = Math.floor(Math.random() * images.length);
+    console.log(rndIdx)
 }
 
-//callback functions lab for help
 function grabImg1() {
     let rndIdx = Math.floor(Math.random() * images.length);
-    const div = document.createElement('div');
-    div.style.fontSize = '30px';
-    div.style.textAlign = 'center';
-    div.style.marginTop = '20vh';
-    div.innerText = rndIdx;
-    leftReel.appendChild(div);
-    console.log(div);
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].value === rndIdx) {
+            const p = document.createElement('p');
+            p.innerText = images[i].name;
+            leftReel.appendChild(p);
+            console.log(p);
+            console.log(images[i].name)
+        }
+    }
+
+
     console.log(rndIdx)
 }
 
 function grabImg2() {
     let rndIdx = Math.floor(Math.random() * images.length);
-    const div = document.createElement('div');
-    div.style.fontSize = '30px';
-    div.style.textAlign = 'center';
-    div.style.marginTop = '20vh';
-    div.innerText = rndIdx;
-    middleReel.appendChild(div);
-    console.log(div);
-    console.log(rndIdx)
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].value === rndIdx) {
+            const p = document.createElement('p');
+            p.innerText = images[i].name;
+            middleReel.appendChild(p);
+            console.log(p);
+            console.log(images[i].name)
+        }
+    }
 }
+
 function grabImg3() {
     let rndIdx = Math.floor(Math.random() * images.length);
-    const div = document.createElement('div');
-    div.style.fontSize = '30px';
-    div.style.textAlign = 'center';
-    div.style.marginTop = '20vh';
-    div.innerText = rndIdx;
-    rightReel.appendChild(div);
-    console.log(div);
-    console.log(rndIdx)
-}
-function init() {
-    let rndIdx = Math.floor(Math.random() * images.length);
-    console.log(rndIdx)
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].value === rndIdx) {
+            const p = document.createElement('p');
+            p.innerText = images[i].name;
+            rightReel.appendChild(p);
+            console.log(p);
+            console.log(images[i].name)
+        }
+    }
+
+    function checkWinner() {
+        if (leftReel.innerHTML === middleReel.innerHTML && leftReel.innerHTML === rightReel.innerHTML) {
+
+        }
+    }
+
+    function reset() {
+
+    }
 }
