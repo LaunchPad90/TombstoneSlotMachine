@@ -1,7 +1,11 @@
+
 body {
     display: grid;
-    height: 98vh;
-    grid-template-rows: 1fr 10fr 2fr;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 70vh;
+    width: 50vw;
+    grid-template-rows: 1fr 4fr 1fr;
 }
 header {
     text-align: center;
@@ -11,9 +15,7 @@ header {
 }
 main {
     display: grid;
-    /* grid-gap: 2em; */
     border: 5px solid green;
-    /* height: 80vh; */
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
 }
@@ -25,20 +27,19 @@ footer {
     align-items: center;
     border: 10px solid blue;
 }
+#container {
+    display: grid;
+    /* align-self: center; */
+}
 #left-reel {
     border: 4px solid black;
-    /* align-self: center;
-    grid-auto-rows: auto; */
+    background-color: #707070
 }
 #middle-reel {
     border: 4px solid black;
-    /* align-self: center;
-    grid-auto-rows: auto; */
 }
 #right-reel {
     border: 4px solid black;
-    /* align-self: center;
-    grid-auto-rows: auto; */
 }
 #spinBtn {
     border-radius: 80%;
@@ -47,6 +48,9 @@ footer {
     text-align: center;
     background-color: green;
     color: white;
+}
+#spinBtn:hover {
+    cursor: pointer;
 }
 #bet {
     grid-template-columns: 1fr;

@@ -30,8 +30,9 @@ console.log(betBtn)
 const bet = document.querySelector('input');
 console.log(bet.innerText);
 
-const playerMoney = document.getElementById('player-money');
+let playerMoney = document.getElementById('player-money');
 console.log(playerMoney)
+
 
 
 /*----- event listeners -----*/
@@ -46,10 +47,6 @@ spinBtn.addEventListener('click', function (e) {
         return;
     }
 
-    function spin() {
-        let rndIdx = Math.floor(Math.random() * images.length);
-        // console.log(rndIdx)
-    }
     setTimeout(grabImg1, 1000);
     setTimeout(grabImg2, 2000);
     setTimeout(grabImg3, 3000);
@@ -58,13 +55,13 @@ spinBtn.addEventListener('click', function (e) {
 betBtn.addEventListener('click', function (e) {
     console.log(bet.value);
     betHolder.push(bet.value);
+    spinBtn
 })
 /*----- functions -----*/
 function placeBet() {
     if (parseInt(bet.value) <= parseInt(playerMoney.innerText)) {
         playerMoney.innerText = parseInt(playerMoney.innerText) - parseInt(bet.value);
     }
-    checkWinner();
     console.log(parseInt(bet.value));
     console.log(parseInt(playerMoney.innerText))
 }
