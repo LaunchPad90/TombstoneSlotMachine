@@ -12,7 +12,10 @@ const images = [
 
 let betHolder = [];
 
+
 /*----- cached element references -----*/
+const msg = document.getElementById('top-bar');
+
 const spinBtn = document.getElementById('spinBtn');
 
 const leftReel = document.getElementById('left-reel');
@@ -34,6 +37,15 @@ console.log(playerMoney)
 /*----- event listeners -----*/
 spinBtn.addEventListener('click', function (e) {
     // console.log(e.target);
+    if (bet.value === '') {
+        alert('Place a bet first!')
+        return;
+    }
+    if (bet.value > parseInt(playerMoney.innerText)) {
+        alert('you broke');
+        return;
+    }
+
     function spin() {
         let rndIdx = Math.floor(Math.random() * images.length);
         // console.log(rndIdx)
@@ -49,12 +61,10 @@ betBtn.addEventListener('click', function (e) {
 })
 /*----- functions -----*/
 function placeBet() {
-    if (parseInt(bet.value) < parseInt(playerMoney.innerText)) {
+    if (parseInt(bet.value) <= parseInt(playerMoney.innerText)) {
         playerMoney.innerText = parseInt(playerMoney.innerText) - parseInt(bet.value);
     }
-    if (checkWinner === true) {
-        parseInt(playerMoney.innerText) += parseInt(bet.value * 2)
-    }
+    checkWinner();
     console.log(parseInt(bet.value));
     console.log(parseInt(playerMoney.innerText))
 }
@@ -97,11 +107,11 @@ function grabImg3() {
         }
     }
 
-    function checkWinner(winner) {
-        if (leftReel.innerHTML === middleReel.innerHTML && leftReel.innerHTML === rightReel.innerHTML) {
-            playerMoney.innerText += (bet.value * 2);
+    function checkWinner() {
+        if (leftReel.innerText === middleReel.innerText && leftReel.innerText === rightReel.innerText) {
+            return parseInt(playerMoney.innerText += parseInt(bet.value * 2));
         } else {
-            playerMoney.innerText -= (bet.value);
+            parseInt(playerMoney.innerText -= parseInt(bet.value));
         }
     }
     checkWinner();
