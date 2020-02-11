@@ -1,48 +1,71 @@
-
-#top-bar {
-    display: flex;
-    border: 1px solid black;
-    height: 10vh;
-    justify-content: space-evenly;
-    font-size: 30px;
-}
-#container {
+body {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 65vh;
-    width: 98vw;
-    border: 1px solid #707070;
-    margin: auto;
-    grid-gap: 80px;
+    height: 98vh;
+    grid-template-rows: 1fr 10fr 2fr;
+}
+header {
+    text-align: center;
+    align-self: end;
+    font-size: 3em;
+    border: 3px solid red;
+}
+main {
+    display: grid;
+    /* grid-gap: 2em; */
+    border: 5px solid green;
+    /* height: 80vh; */
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+footer {
+    display: grid;
+    font-size: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    border: 10px solid blue;
 }
 #left-reel {
-    border: 1px solid black;
-    /* background-image: url('imgs/left-reel.jpg'); */
+    border: 4px solid black;
+    /* align-self: center;
+    grid-auto-rows: auto; */
 }
 #middle-reel {
-    border: 1px solid black;
-    /* background-image: url('imgs/tombstone_1993_10_0.jpg'); */
+    border: 4px solid black;
+    /* align-self: center;
+    grid-auto-rows: auto; */
 }
 #right-reel {
-    border: 1px solid black;
-}
-#bottom-bar {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    border: 1px solid black;
-    height: 20vh;
+    border: 4px solid black;
+    /* align-self: center;
+    grid-auto-rows: auto; */
 }
 #spinBtn {
     border-radius: 80%;
-    padding: 0 80px;
-    background-color: rgb(65, 157, 243);
-    color: white;
     font-size: 2em;
+    padding: 8px 30px;
+    text-align: center;
+    background-color: green;
+    color: white;
+}
+#bet {
+    grid-template-columns: 1fr;
+    justify-self: center;
     text-align: center;
 }
-
-p {
-    font-size: 100px;
+#bet > button {
+    align-self: center;
+    font-size: 1em;
     text-align: center;
+}
+p {
+    margin: 0;
+}
+input {
+    font-size: 1em;
+    text-align: center;
+}
+#player-money {
+    font-size: 2em;
+    color: green;
 }
