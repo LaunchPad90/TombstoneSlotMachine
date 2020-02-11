@@ -6,10 +6,13 @@ const images = [
     { value: 3, name: 'doc', payout: 5000 }
 ];
 
+// const probability = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3];  
+// console.log(probability)
+
 /*----- app's state (variables) -----*/
 let winner;
 
-let msg = document.createElement('h1');
+let msg = document.createElement('h2');
 
 // if (leftReel.innerText === rightReel.innerText && leftReel === middleReel) 
 
@@ -84,7 +87,8 @@ function grabImg3() {
         }
     }
 
-    function reset() {
-
+    function updateMsg(msg) {
+        msg.appendChild('#top-bar')
     }
+
 }

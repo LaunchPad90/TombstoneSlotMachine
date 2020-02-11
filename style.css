@@ -1,6 +1,4 @@
-body {
-    
-}
+
 #top-bar {
     display: flex;
     border: 1px solid black;
@@ -40,7 +38,7 @@ body {
     padding: 0 80px;
     background-color: rgb(65, 157, 243);
     color: white;
-    font-size: 30px;
+    font-size: 2em;
     text-align: center;
 }
 
