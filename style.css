@@ -10,7 +10,7 @@ body {
 header {
     text-align: center;
     align-self: end;
-    font-size: 3em;
+    font-size: 2em;
     border: 3px solid red;
 }
 main {
@@ -21,15 +21,10 @@ main {
 }
 footer {
     display: grid;
-    font-size: 20px;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
     border: 10px solid blue;
-}
-#container {
-    display: grid;
-    /* align-self: center; */
 }
 #left-reel {
     border: 4px solid black;
@@ -42,9 +37,7 @@ footer {
     border: 4px solid black;
 }
 #spinBtn {
-    border-radius: 80%;
     font-size: 2em;
-    padding: 8px 30px;
     text-align: center;
     background-color: green;
     color: white;
@@ -53,23 +46,12 @@ footer {
     cursor: pointer;
 }
 #bet {
-    grid-template-columns: 1fr;
+    display: block;
+    grid-template-columns: 1fr 1fr;
     justify-self: center;
     text-align: center;
 }
-#bet > button {
-    align-self: center;
-    font-size: 1em;
-    text-align: center;
-}
-p {
-    margin: 0;
-}
-input {
-    font-size: 1em;
-    text-align: center;
-}
 #player-money {
-    font-size: 2em;
+    font-size: 1em;
     color: green;
 }
