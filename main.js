@@ -1,9 +1,15 @@
 /*----- constants -----*/
 const images = [
     { value: 0, name: 'wyatt', payOut: 10 },
-    // { value: 1, name: 'morgan', payOut: 25 },
-    // { value: 2, name: 'doc', payout: 50 }
+    { value: 1, name: 'morgan', payOut: 25 },
+    { value: 2, name: 'doc', payout: 50 }
 ];
+
+const classes = {
+    '0': 'wyatt',
+    '1': 'virgil',
+    '2': 'doc'
+}
 
 /*----- app's state (variables) -----*/
 let betHolder = [];
@@ -23,16 +29,19 @@ let newBet;
 let playerMoney = document.getElementById('player-money');
 let money = parseInt(playerMoney.innerText)
 
+let msg = document.getElementById('top-bar');
+
 
 /*----- event listeners -----*/
 spinBtn.addEventListener('click', function (e) {
     if (bet.value === '') {
-        alert('Place a bet first!')
+        msg.innerText = "MAKE A BET";
+        msg.style.backgroundColor.flash = 'red'
         return;
     }
 
     if (bet.value > playerMoney.innerText) {
-        alert('you broke');
+        msg.innerText = "NOT ENOUGH COIN"
         return;
     }
 
@@ -44,50 +53,41 @@ spinBtn.addEventListener('click', function (e) {
 
 function grabImg1() {
     let rndIdx = Math.floor(Math.random() * images.length);
+    let picture = classes[rndIdx]
     for (let i = 0; i < images.length; i++) {
         if (images[i].value === rndIdx) {
-            const p = document.createElement('p');
-            p.innerText = images[i].name;
-            leftReel.appendChild(p);
-            console.log(p);
-            console.log(images[i].value)
+            leftReel.classList.add(picture);
         }
     }
 }
 
 function grabImg2() {
     let rndIdx = Math.floor(Math.random() * images.length);
+    let picture = classes[rndIdx]
     for (let i = 0; i < images.length; i++) {
         if (images[i].value === rndIdx) {
-            const p = document.createElement('p');
-            p.innerText = images[i].name;
-            middleReel.appendChild(p);
-            console.log(p);
-            console.log(images[i].value)
+            middleReel.classList.add(picture);
         }
     }
 }
 
 function grabImg3() {
     let rndIdx = Math.floor(Math.random() * images.length);
+    let picture = classes[rndIdx]
     for (let i = 0; i < images.length; i++) {
         if (images[i].value === rndIdx) {
-            const p = document.createElement('p');
-            p.innerText = images[i].name;
-            rightReel.appendChild(p);
-            console.log(p);
-            console.log(images[i].value)
+            rightReel.classList.add(picture);
         }
-    }
 
-    function checkWinner() {
-        newBet = parseInt(bet.value);
-        if (leftReel.innerText === middleReel.innerText && leftReel.innerText === rightReel.innerText) {
-            console.log(playerMoney)
-            return playerMoney.innerText = (money + newBet);
-        } else {
-            return playerMoney.innerText = (money - newBet);
+        function checkWinner() {
+            newBet = parseInt(bet.value);
+            if (leftReel.innerText === middleReel.innerText && leftReel.innerText === rightReel.innerText) {
+                console.log(playerMoney)
+                return playerMoney.innerText = (money + newBet);
+            } else {
+                return playerMoney.innerText = (money - newBet);
+            }
         }
+        checkWinner();
     }
-    checkWinner();
 }
