@@ -14,6 +14,7 @@ const classes = {
 /*----- app's state (variables) -----*/
 let betHolder = [];
 /*----- cached element references -----*/
+const container = document.getElementById('container');
 
 const spinBtn = document.getElementById('spinBtn');
 
@@ -27,7 +28,7 @@ const bet = document.querySelector('input')
 let newBet;
 
 let playerMoney = document.getElementById('player-money');
-let money = parseInt(playerMoney.innerText)
+let money = 200;
 
 let msg = document.getElementById('top-bar');
 
@@ -45,9 +46,14 @@ spinBtn.addEventListener('click', function (e) {
         return;
     }
 
+    leftReel.classList = '';
+    rightReel.classList = '';
+    middleReel.classList = '';
+
     setTimeout(grabImg1, 1000);
     setTimeout(grabImg2, 2000);
     setTimeout(grabImg3, 3000);
+
 });
 /*----- functions -----*/
 
@@ -78,16 +84,21 @@ function grabImg3() {
         if (images[i].value === rndIdx) {
             rightReel.classList.add(picture);
         }
+    }
+    checkWinner();
+}
 
-        function checkWinner() {
-            newBet = parseInt(bet.value);
-            if (leftReel.innerText === middleReel.innerText && leftReel.innerText === rightReel.innerText) {
-                console.log(playerMoney)
-                return playerMoney.innerText = (money + newBet);
-            } else {
-                return playerMoney.innerText = (money - newBet);
-            }
-        }
-        checkWinner();
+
+function checkWinner() {
+    newBet = parseInt(bet.value);
+    console.log(newBet)
+    console.log(money)
+    if (leftReel.class === middleReel.class && leftReel.class === rightReel.class) {
+        console.log(playerMoney)
+        money += newBet;
+        playerMoney.innerText = money;
+    } else {
+        money -= newBet;
+        playerMoney.innerText = money;
     }
 }

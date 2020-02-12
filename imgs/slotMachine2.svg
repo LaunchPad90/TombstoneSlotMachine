@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="659px" height="682px" viewBox="0 0 659 682" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Desktop HD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M330.5,0 C476.579316,0 595,68.6741159 595,153.387931 C595,159.930619 594.293631,166.377631 592.922707,172.704721 L595,172.703448 L595,493 L659,493 L659,682 L0,682 L0,493 L66,493 L66,172.703448 L68.0772934,172.704721 C66.7063688,166.377631 66,159.930619 66,153.387931 C66,68.6741159 184.420684,0 330.5,0 Z M230.255708,204.517241 L102.232877,204.517241 L102.232877,402.217241 L230.255708,402.217241 L230.255708,204.517241 Z M395.719178,204.517241 L267.696347,204.517241 L267.696347,402.217241 L395.719178,402.217241 L395.719178,204.517241 Z M561.182648,204.517241 L433.159817,204.517241 L433.159817,402.217241 L561.182648,402.217241 L561.182648,204.517241 Z" id="path-1"></path>
+        <filter x="-1.1%" y="-0.7%" width="102.1%" height="102.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Combined-Shape">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#002F41" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <rect id="Rectangle" stroke="#979797" fill-opacity="0.636964598" fill="#6D7278" x="87.5" y="538.5" width="485" height="103" rx="8"></rect>
+    </g>
+</svg>

@@ -8,37 +8,39 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Raleway|Roboto&display=swap"
         rel="stylesheet">
     <script defer src="main.js"></script>
-    <title>Document</title>
+    <title>Slot Machine</title>
 </head>
 
 <body>
-    <header id="top-bar">SPIN TO WIN!</header>
+    <div class="slot-wrapper">
 
-    <main id="container">
-        <div id="left-reel"></div>
-        <div id="middle-reel"></div>
-        <div id="right-reel"></div>
-    </main>
+        <header id="top-bar">SPIN TO WIN!</header>
 
-    <footer id="bottom-bar">
-        <div>
-            CREDITS: <span id="player-money">200</span>
-        </div>
+        <main id="container">
+            <div id="left-reel"></div>
+            <div id="middle-reel"></div>
+            <div id="right-reel"></div>
+        </main>
 
-        <div>
-            <button id="spinBtn">SPIN</button>
-        </div>
+        <footer id="bottom-bar">
+            <div>
+                CREDITS: <span id="player-money">200</span>
+            </div>
 
-        <div id="bet">
-            <p>
-                <input type="text" placeholder="BET HERE!!!">
-                <button class="pm">+</button>
-                <button class="pm">-</button>
-            </p>
-            <!-- <button id="betBtn">ENTER</button> -->
-        </div>
-    </footer>
+            <div>
+                <button id="spinBtn">SPIN</button>
+            </div>
 
+            <div id="bet">
+                <p>
+                    <input type="text" placeholder="BET HERE!!!">
+                    <button class="pm">+</button>
+                    <button class="pm">-</button>
+                </p>
+                <!-- <button id="betBtn">ENTER</button> -->
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
