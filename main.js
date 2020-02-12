@@ -36,7 +36,7 @@ let msg = document.getElementById('top-bar');
 spinBtn.addEventListener('click', function (e) {
     if (bet.value === '') {
         msg.innerText = "MAKE A BET";
-        msg.style.backgroundColor.flash = 'red'
+        msg.style.backgroundColor = 'red'
         return;
     }
 
