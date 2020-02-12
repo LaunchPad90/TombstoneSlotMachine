@@ -40,9 +40,11 @@ spinBtn.addEventListener('click', function (e) {
         return;
     }
 
-    if (bet.value > playerMoney.innerText) {
+    if (bet.value > money) {
         msg.innerText = "NOT ENOUGH COIN"
         return;
+    } else {
+        msg.innerText = "GOOD LUCK"
     }
 
     setTimeout(grabImg1, 1000);
@@ -81,7 +83,7 @@ function grabImg3() {
 
         function checkWinner() {
             newBet = parseInt(bet.value);
-            if (leftReel.innerText === middleReel.innerText && leftReel.innerText === rightReel.innerText) {
+            if (leftReel.classList === middleReel.classList && leftReel.classList === rightReel.classList) {
                 console.log(playerMoney)
                 return playerMoney.innerText = (money + newBet);
             } else {

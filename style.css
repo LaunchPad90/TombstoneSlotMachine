@@ -69,6 +69,9 @@ footer {
     background-position: center;
     border: 1px solid black;
 }
+#left-reel, #middle-reel, #right-reel {
+    border: 1px solid black;
+}
 #spinBtn {
     font-size: 2em;
     text-align: center;
