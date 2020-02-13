@@ -4,34 +4,39 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Merriweather', serif;
 font-family: 'Raleway', sans-serif;
 */
-
- body {
-    background-image: url('imgs/slotMachine.svg');
-    background-size: 100% 140%;
+html {
+    margin-top: 0;
+    /* background-size: contain;  */
+    background-size: 100vw;
+    background-size: cover;
+    background-image: url('imgs/tombstone-arizona-joe-granita.jpg') 
+}
+body {
+    background-image: url('imgs/slotMachine2.svg');
+    background-size: 100% 103%;
     background-position: top center;
     background-repeat: no-repeat;
 
 } 
-
 .slot-wrapper {
     display: grid;
     min-width: 300px;
     margin: 0 auto;
-    margin-top: 25vh;
-    height: 72vh;
+    height: 100vh;
     width: 30vw;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     
 }
 header {
     text-align: center;
     align-self: end;
     font-size: 2em;
+    margin-top: 19vh;
     /* border: 3px solid red; */
 }
 main {
     display: grid;
-    /* grid-gap: 1em; */
+    grid-gap: 2em;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
 
@@ -39,45 +44,45 @@ main {
 footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* grid-gap: 2em; */
+    margin-top: 5vh;
     justify-items: center;
     align-items: center;
+}
+#credits {
+    color: white;
+    font-size: 28px;
 }
 #top-bar {
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10vh;
-    color: black;
+    border-radius: 5%;
+    color: white;
+    
 }
 .doc {
     background-image: url('imgs/doc.png');
     background-size: 7vw 20vh;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid black;
-}
-.img-default {
-    background-color: goldenrod;
 }
 .virgil {
     background-image: url('imgs/virgil.png');
     background-size: 7vw 20vh;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid black;
 }
 .wyatt {
     background-image: url('imgs/wyatt.png');
     background-size: 7vw 20vh;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid black;
-}
-#left-reel, #right-reel, #middle-reel {
-    border: 1px solid black;
 }
 #spinBtn {
     font-size: 2em;
     text-align: center;
-    background-color: green;
+    background-color: #b69578;
+    border: 2px solid #987e66;
     color: white;
 }
 #spinBtn:hover {
@@ -91,5 +96,5 @@ footer {
 }
 #player-money {
     font-size: 1em;
-    color: green;
+    color: #f8f8ff;
 }
