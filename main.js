@@ -10,12 +10,10 @@ const classes = {
     '1': 'virgil',
     '2': 'doc'
 }
-
-/*----- app's state (variables) -----*/
-let betHolder = [];
 /*----- cached element references -----*/
+const container = document.getElementById('container');
 
-const spinBtn = document.getElementById('spinBtn');
+let msg = document.getElementById('top-bar');
 
 const leftReel = document.getElementById('left-reel');
 
@@ -23,29 +21,38 @@ const middleReel = document.getElementById('middle-reel');
 
 const rightReel = document.getElementById('right-reel');
 
+const spinBtn = document.getElementById('spinBtn');
+
 const bet = document.querySelector('input')
 let newBet;
 
 let playerMoney = document.getElementById('player-money');
-let money = parseInt(playerMoney.innerText)
-
-let msg = document.getElementById('top-bar');
-
-
+let money = 200;
 /*----- event listeners -----*/
 spinBtn.addEventListener('click', function (e) {
+    msg.style.color = '';
+    msg.style.background = '';
     if (bet.value === '') {
         msg.innerText = "MAKE A BET";
-        msg.style.backgroundColor = 'red'
+        msg.style.color = 'red'
         return;
     }
 
-    if (bet.value > money) {
+    if (bet.value <= playerMoney.innerText) {
+        msg.innerText = 'GOOD LUCK!'
+        msg.style.color = '#FCA311'
+    }
+
+    if (bet.value > playerMoney.innerText) {
         msg.innerText = "NOT ENOUGH COIN"
         return;
     } else {
         msg.innerText = "GOOD LUCK"
     }
+
+    leftReel.classList = '';
+    rightReel.classList = '';
+    middleReel.classList = '';
 
     setTimeout(grabImg1, 1000);
     setTimeout(grabImg2, 2000);
@@ -59,6 +66,8 @@ function grabImg1() {
     for (let i = 0; i < images.length; i++) {
         if (images[i].value === rndIdx) {
             leftReel.classList.add(picture);
+            var audio = new Audio('sounds/234305__paulnorthyorks__gunshot.wav');
+            audio.play();
         }
     }
 }
@@ -69,6 +78,8 @@ function grabImg2() {
     for (let i = 0; i < images.length; i++) {
         if (images[i].value === rndIdx) {
             middleReel.classList.add(picture);
+            var audio = new Audio('sounds/234305__paulnorthyorks__gunshot.wav');
+            audio.play();
         }
     }
 }
@@ -79,17 +90,29 @@ function grabImg3() {
     for (let i = 0; i < images.length; i++) {
         if (images[i].value === rndIdx) {
             rightReel.classList.add(picture);
+            var audio = new Audio('sounds/234305__paulnorthyorks__gunshot.wav');
+            audio.play();
         }
+    }
+    checkWinner();
+}
 
-        function checkWinner() {
-            newBet = parseInt(bet.value);
-            if (leftReel.classList === middleReel.classList && leftReel.classList === rightReel.classList) {
-                console.log(playerMoney)
-                return playerMoney.innerText = (money + newBet);
-            } else {
-                return playerMoney.innerText = (money - newBet);
-            }
-        }
-        checkWinner();
+function checkWinner() {
+    msg.style.background = '';
+    newBet = parseInt(bet.value);
+    console.log(newBet)
+    console.log(money)
+    if (leftReel.classList.value === middleReel.classList.value && middleReel.classList.value === rightReel.classList.value) {
+        var audio = new Audio('sounds/361346__jack126guy__slot-machine-payout.wav');
+        audio.play();
+        msg.style.color = '#F5F749'
+        msg.innerText = 'Congratulations!'
+        money += newBet;
+        playerMoney.innerText = money;
+    } else {
+        msg.style.color = '#565554'
+        msg.innerText = 'Spin again?'
+        money -= newBet;
+        playerMoney.innerText = money;
     }
 }
