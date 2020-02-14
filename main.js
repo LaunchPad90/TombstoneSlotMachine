@@ -28,6 +28,10 @@ let newBet;
 
 let playerMoney = document.getElementById('player-money');
 let money = 200;
+
+const plus = document.getElementById('plus');
+
+const minus = document.getElementById('minus');
 /*----- event listeners -----*/
 spinBtn.addEventListener('click', function (e) {
     msg.style.color = '';
@@ -38,13 +42,14 @@ spinBtn.addEventListener('click', function (e) {
         return;
     }
 
-    if (bet.value <= playerMoney.innerText) {
+    if (bet.value <= money) {
         msg.innerText = 'GOOD LUCK!'
-        msg.style.color = '#FCA311'
+        msg.style.color = 'white'
     }
 
-    if (bet.value > playerMoney.innerText) {
-        msg.innerText = "NOT ENOUGH COIN"
+    if (bet.value > money) {
+        msg.style.color = 'red';
+        msg.innerText = "BET TOO BIG"
         return;
     } else {
         msg.innerText = "GOOD LUCK"
@@ -57,6 +62,26 @@ spinBtn.addEventListener('click', function (e) {
     setTimeout(grabImg1, 1000);
     setTimeout(grabImg2, 2000);
     setTimeout(grabImg3, 3000);
+});
+
+plus.addEventListener('click', function (e) {
+    msg.style.color = 'white';
+    msg.innerText = '';
+    var audio = new Audio('sounds/341695__projectsu012__coins-1 (1).wav');
+    audio.play();
+    if (bet.value >= 0) {
+        bet.value++;
+    }
+});
+
+minus.addEventListener('click', function (e) {
+    msg.style.color = 'white';
+    msg.innerText = 'SCARED?'
+    if (bet.value > 0) {
+        bet.value--;
+    } else {
+        msg.innerText = 'CANT GO LOWER';
+    }
 });
 /*----- functions -----*/
 
@@ -100,18 +125,16 @@ function grabImg3() {
 function checkWinner() {
     msg.style.background = '';
     newBet = parseInt(bet.value);
-    console.log(newBet)
-    console.log(money)
     if (leftReel.classList.value === middleReel.classList.value && middleReel.classList.value === rightReel.classList.value) {
         var audio = new Audio('sounds/361346__jack126guy__slot-machine-payout.wav');
         audio.play();
-        msg.style.color = '#F5F749'
+        msg.style.color = 'green'
         msg.innerText = 'Congratulations!'
         money += newBet;
         playerMoney.innerText = money;
     } else {
-        msg.style.color = '#565554'
-        msg.innerText = 'Spin again?'
+        msg.style.color = 'red'
+        msg.innerText = 'SPIN AGAIN?'
         money -= newBet;
         playerMoney.innerText = money;
     }
