@@ -48,7 +48,8 @@ spinBtn.addEventListener('click', function (e) {
     }
 
     if (bet.value > money) {
-        msg.innerText = "NOT ENOUGH COIN"
+        msg.style.color = 'red';
+        msg.innerText = "BET TOO BIG"
         return;
     }
 
