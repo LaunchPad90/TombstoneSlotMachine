@@ -35,7 +35,6 @@ main {
 footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-gap: 2em; */
     margin-top: 5vh;
     justify-items: center;
     align-items: center;
@@ -49,7 +48,6 @@ footer {
     margin-bottom: 10vh;
     border-radius: 5%;
     color: white;
-    
 }
 .doc {
     background-image: url('imgs/doc.png');

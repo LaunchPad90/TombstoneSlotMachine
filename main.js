@@ -30,7 +30,7 @@ let playerMoney = document.getElementById('player-money');
 let money = 200;
 
 const plus = document.getElementById('plus');
-console.log(plus)
+
 const minus = document.getElementById('minus');
 /*----- event listeners -----*/
 spinBtn.addEventListener('click', function (e) {
