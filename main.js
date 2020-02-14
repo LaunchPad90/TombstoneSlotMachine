@@ -64,7 +64,9 @@ spinBtn.addEventListener('click', function (e) {
 
 plus.addEventListener('click', function (e) {
     msg.style.color = 'white';
-    msg.innerText = 'ANOTHER BUCK IN';
+    msg.innerText = '';
+    var audio = new Audio('sounds/341695__projectsu012__coins-1 (1).wav');
+    audio.play();
     if (bet.value >= 0) {
         bet.value++;
     }
